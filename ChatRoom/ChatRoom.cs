@@ -92,6 +92,36 @@ namespace ChatRoom
                     string editedMessage = Console.ReadLine();
                     int originIndex = usersMess[userChoice].index;
                     Messages[originIndex].UpdateText(editedMessage);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Edited successfully!");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("Press any key to proceed.");
+                    Console.ReadKey();
+                }
+            }
+        }
+
+        public void DeleteMessage(User user)
+        {
+            List<(Message message, int index)>? usersMess = FindUserMessages(user);
+            if (usersMess != null)
+            { 
+                Console.WriteLine("Which message do you want to delete?");
+                for (int i = 0; i < usersMess.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}. {usersMess[i].message.Text}");
+                }
+
+                int userChoice = int.Parse(Console.ReadLine()) - 1;
+                if(userChoice >= 0 && userChoice < usersMess.Count)
+                {
+                    int originIndex = usersMess[userChoice].index;
+                    Messages.Remove(Messages[originIndex]);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Deleted successfully!");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("Press any key to proceed.");
+                    Console.ReadKey();
                 }
             }
         }

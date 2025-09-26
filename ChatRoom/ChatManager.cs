@@ -73,7 +73,7 @@ namespace ChatRoom
             }
         }
 
-        private static string[] RoomActions = { "send message", "edit message","Detele message","Leave Room" };
+        private static string[] RoomActions = { "Send message", "Edit message","Detele message","Leave Room" };
         private static bool isInRoomMenu;
         public static void RoomMenu(ChatRoom room, User user)
         {
@@ -102,6 +102,7 @@ namespace ChatRoom
                         room.EditMessage(user);
                         break;
                     case 3:
+                        room.DeleteMessage(user);
                         break;
                     case 4:
                         isInRoomMenu = false;

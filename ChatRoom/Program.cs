@@ -40,16 +40,6 @@
                         break;
                 }
             }
-           
-
-         
-
-            //Console.WriteLine("Send your message:");
-            //string messageText = Console.ReadLine();
-            //Message newMessage = new Message(messageText, user);
-
-            //room1.SendMessage(newMessage);
-            //room1.DisplayMessages();
         }
     }
 }

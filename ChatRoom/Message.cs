@@ -18,5 +18,10 @@ namespace ChatRoom
             Sender = sender;
             TimeStamp = DateTime.Now;
         }
+
+        public void UpdateText(string newText)
+        {
+            Text = newText;
+        }
     }
 }

@@ -77,7 +77,8 @@ namespace ChatRoom
                 if(inputUserName == user.UserName && inputPassword == user.Password)
                 {
                     Console.WriteLine($"Welcome back! {user.UserName}");
-                        
+                    Console.WriteLine("Press any key to proceed");
+                    Console.ReadKey();
                     return user;
                 }
 
